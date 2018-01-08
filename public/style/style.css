@@ -1,0 +1,25 @@
+body {
+    margin: 15px;
+}
+
+.contact-card {
+    display: block;
+    float: left;
+    color: black;
+    width: auto;
+    margin: 1%;
+    background-color: #f5f5f3;
+}
+
+.addButton {
+    margin-right: 5px;
+}
+
+.searchContact {
+    width: 350px;
+}
+
+.newContact {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
