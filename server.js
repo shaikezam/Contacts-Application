@@ -4,6 +4,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var data = require('./routes/data');
 
+var test = require('./routes/test');
+
 var app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -13,6 +15,7 @@ app.use('/scripts', express.static(__dirname + '/node_modules/'));
 app.use('/', index);
 app.use('/users', users);
 app.use('/data', data);
+app.use('/test', test);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
