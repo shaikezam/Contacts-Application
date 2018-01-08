@@ -10,6 +10,7 @@
         "requirejs": "2.3.5",
         "jquery": "2.2.4",
         "angular": "1.6.8",
-        "bootstrap": "3.3.7"
+        "bootstrap": "3.3.7",
+        "preem": "git://github.com/shaikezam/preem.git#test"
     }
 }
