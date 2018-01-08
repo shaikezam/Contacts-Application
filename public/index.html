@@ -2,59 +2,55 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>My AngularJS AngularJS + RequireJS App</title>
+        <title>Contacts Application</title>
         <link rel="stylesheet" href="../scripts/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="./style/style.css">
         <script src="../scripts/requirejs/require.js"></script>
         <script src="index.js"></script>
     </head>
-    <body>
-             <h2>AngularJS Sample Application</h2>
-      <div ng-app = "mainApp">
-         <p><a href = "#addStudent">Add Student</a></p>
-         <p><a href = "#viewStudents">View Students</a></p>
-         <div ng-view></div>
-         
-         <script type = "text/ng-template" id = "addStudent.htm">
-            <h2> Add Student </h2>
-            {{message}}
-         </script>
-         
-         <script type = "text/ng-template" id = "viewStudents.htm">
-            <h2> View Students </h2>
-            {{message}}
-         </script>
-      </div>
-      
-      <script>
-         var mainApp = angular.module("mainApp", ['ngRoute']);
-         mainApp.config(['$routeProvider', function($routeProvider) {
-            $routeProvider.
-            
-            when('/addStudent', {
-               templateUrl: 'addStudent.htm',
-               controller: 'AddStudentController'
-            }).
-            
-            when('/viewStudents', {
-               templateUrl: 'viewStudents.htm',
-               controller: 'ViewStudentsController'
-            }).
-            
-            otherwise({
-               redirectTo: '/addStudent'
-            });
-         }]);
-         
-         mainApp.controller('AddStudentController', function($scope) {
-            $scope.message = "This page will be used to display add student form";
-         });
-         
-         mainApp.controller('ViewStudentsController', function($scope) {
-            $scope.message = "This page will be used to display all the students";
-         });
-			
-      </script>
-      
-   </body>
+    <body ng-app="contactsApplication">
+        <div class="panel panel-primary">
+            <div class="panel-heading"
+                 style="font-size:large">Product
+                List
+            </div>
+
+            <div class="panel-body">
+                <table class="table" ng-controller="ProductListCtrl as vm">
+
+                    <thead>
+                        <tr>
+                            <td>
+                                <button type="button"
+                                        class="btn btn-primary"
+                                        ng-click="vm.toggleFavoriteColor()">
+                                    {{vm.showFavoriteColor ? "Hide" : "Show"}} Favorite Color
+                                </button>
+                            </td>
+                            <td>Name</td>
+                            <td>eMail</td>
+                            <td>Gender</td>
+                            <td>Address</td>
+                            <td>Birthday</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="contact in vm.contacts">
+                            <td>
+                                <img ng-if="vm.showImage"
+                                     ng-src="{{contact.imageUrl}}">
+                            </td>
+                            <td>{{ contact.first_name + ' ' + contact.last_name}}</td>
+                            <td>{{ contact.email}}</td>
+                            <td>{{ contact.gender}}</td>
+                            <td>{{ contact.address }}</td>
+                            <td>{{ contact.birthday }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </body>
 </html>

@@ -7,10 +7,11 @@ define([
 ], function (ng) {
     'use strict';
 
-    return ng.module('app', [
-        'app.services',
+    var app = ng.module('contactsApplication', [
+        /*'app.services',
         'app.controllers',
         'app.filters',
-        'app.directives'
+        'app.directives'*/
     ]);
 });
+

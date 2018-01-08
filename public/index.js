@@ -23,7 +23,8 @@ require([
     'require',
     'angular',
     'app',
-    'routes'
+    'jquery',
+    'bootstrap'
 ], function (ng) {
     'use strict';
     $(window).load(function() {
