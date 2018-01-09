@@ -8,13 +8,17 @@ require.config({
             exports: 'jquery'
         },
         angular: {
-            exports: 'angular'
+            exports: 'angular',
+        },
+        angularResource: {
+            exports: 'angularResource'
         }
     },
     paths: {
         //path mappings for module names not found directly under baseUrl. The path settings are assumed to be relative to baseUrl
         jquery: '../scripts/jquery/dist/jquery.min',
-        angular: '../scripts/angular/angular.min',
+        angular: '../scripts/angular/angular',
+        angularResource: '../scripts/angular-resource/angular-resource',
         bootstrap: '../scripts/bootstrap/dist/js/bootstrap.min'
     }
 });
@@ -22,14 +26,13 @@ require.config({
 require([
     'require',
     'angular',
+    //'angularResource',
     'app',
     'jquery',
     'bootstrap'
-], function (ng) {
+], function (require, ng, ngResource) {
     'use strict';
-    $(window).load(function() {
-        ng.bootstrap(document, ['app']);
-    });
+    ng.bootstrap(document, ['contactsApplication']);
 });
 // $(document).ready - executes when HTML-Document is loaded and DOM is ready
-// $(window).load - executes when complete page is fully loaded, including all frames, objects and images
+// $(window).load - exeindecutes when complete page is fully loaded, including all frames, objects and images

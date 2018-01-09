@@ -16,15 +16,15 @@
             </div>
 
             <div class="panel-body">
-                <table class="table" ng-controller="ProductListCtrl as vm">
+                <table class="table" ng-controller="ContactsApplicationCtrl">
 
                     <thead>
                         <tr>
                             <td>
                                 <button type="button"
                                         class="btn btn-primary"
-                                        ng-click="vm.toggleFavoriteColor()">
-                                    {{vm.showFavoriteColor ? "Hide" : "Show"}} Favorite Color
+                                        ng-click="toggleFavoriteColor()">
+                                    {{showFavoriteColor ? "Hide" : "Show"}} Favorite Color
                                 </button>
                             </td>
                             <td>Name</td>
@@ -35,22 +35,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="contact in vm.contacts">
+                        <tr ng-repeat="contact in contacts">
                             <td>
-                                <img ng-if="vm.showImage"
-                                     ng-src="{{contact.imageUrl}}">
+                                <img ng-if="showFavoriteColor"
+                                     ng-src="{{contact.favorite_color}}">
                             </td>
                             <td>{{ contact.first_name + ' ' + contact.last_name}}</td>
                             <td>{{ contact.email}}</td>
                             <td>{{ contact.gender}}</td>
-                            <td>{{ contact.address }}</td>
-                            <td>{{ contact.birthday }}</td>
+                            <td>{{ contact.address}}</td>
+                            <td>{{ contact.birthday}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-
-
     </body>
 </html>

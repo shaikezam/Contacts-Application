@@ -3,7 +3,7 @@
 let preem = new Preem({
     type: Preem.CONSTANTS.TESTTYPE.SYNC,
     networkManager: {
-        appPath: "/FourArrow/game/game.html",
+        appPath: "/",
         data: "/FourArrow/tests/data/data.json"
     },
     title: "Preem demonstration",
