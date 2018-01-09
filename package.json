@@ -9,8 +9,8 @@
         "express": "~4.16.*",
         "requirejs": "2.3.5",
         "jquery": "2.2.4",
-        "angular": "1.6.8",
-        "angular-resource": "1.6.8",
+        "angular": "1.6.6",
+        "angular-resource": "1.6.6",
         "bootstrap": "3.3.7",
         "preem": "git://github.com/shaikezam/preem.git#test"
     }

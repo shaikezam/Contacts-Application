@@ -4,7 +4,7 @@ var express = require('express'),
 
 router.get('/', function (req, res, next) {
 
-    fs.readFile('./data/data.json', function (err, content) {
+    fs.readFile('./data/contacts.json', function (err, content) {
         if (err)
             throw err;
         var parseJson = JSON.parse(content);

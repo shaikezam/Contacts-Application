@@ -2,10 +2,8 @@ define([
     'angular',
     './controllers/index',
     './services/index'
-            /*'./controllers/index',
-             './directives/index',
-             './filters/index',
-             './services/index'*/
+             /*'./directives/index',
+             './filters/index',*/
 ], function (ng) {
     'use strict';
 
