@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
 app.use('/', index);
 app.use('/users', users);
-app.use('/contacts', contacts);
+app.use('/api/contacts', contacts);
 app.use('/test', test);
 
 // catch 404 and forward to error handler

@@ -1,0 +1,40 @@
+<div class="panel">
+    <div class="panel-heading"
+         style="font-size:large">Product
+        List
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-bordered">
+
+            <thead>
+                <tr>
+                    <td>
+                        <button type="button"
+                                class="btn btn"
+                                ng-click="toggleFavoriteColor()">
+                            {{showFavoriteColor ? "Hide" : "Show"}} Favorite Color
+                        </button>
+                    </td>
+                    <td>Name</td>
+                    <td>eMail</td>
+                    <td>Gender</td>
+                    <td>Address</td>
+                    <td>Birthday</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in contacts">
+                    <td>
+                        <img ng-if="showFavoriteColor"
+                             ng-src="{{contact.favorite_color}}">
+                    </td>
+                    <td>{{ contact.first_name + ' ' + contact.last_name}}</td>
+                    <td>{{ contact.email}}</td>
+                    <td>{{ contact.gender}}</td>
+                    <td>{{ contact.address}}</td>
+                    <td>{{ contact.birthday}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

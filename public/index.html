@@ -9,46 +9,35 @@
         <script src="index.js"></script>
     </head>
     <body ng-app="contactsApplication">
-        <div class="panel">
-            <div class="panel-heading"
-                 style="font-size:large">Product
-                List
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <a class="navbar-brand"
+                   ui-sref="home">Acme Product Management</a>
+                <div class="navbar-header">
+                    <button type="button"
+                            class="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a ui-sref="productList">Product List</a></li>
+                        <li><a ui-sref="productEdit.info({productId:0})">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                Add Product</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="panel-body">
-                <table class="table table-hover" ng-controller="ContactsApplicationCtrl">
-
-                    <thead>
-                        <tr>
-                            <td>
-                                <button type="button"
-                                        class="btn btn"
-                                        ng-click="toggleFavoriteColor()">
-                                    {{showFavoriteColor ? "Hide" : "Show"}} Favorite Color
-                                </button>
-                            </td>
-                            <td>Name</td>
-                            <td>eMail</td>
-                            <td>Gender</td>
-                            <td>Address</td>
-                            <td>Birthday</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="contact in contacts">
-                            <td>
-                                <img ng-if="showFavoriteColor"
-                                     ng-src="{{contact.favorite_color}}">
-                            </td>
-                            <td>{{ contact.first_name + ' ' + contact.last_name}}</td>
-                            <td>{{ contact.email}}</td>
-                            <td>{{ contact.gender}}</td>
-                            <td>{{ contact.address}}</td>
-                            <td>{{ contact.birthday}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        </nav>
+        <div class="container">
+            <div data-ui-view></div>
         </div>
+        <!--<a href="#!contacts">click</a>
+        <div ng-view></div>-->
     </body>
 </html>

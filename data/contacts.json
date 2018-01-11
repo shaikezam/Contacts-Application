@@ -1,4 +1,14 @@
 [{
+        "id": 0,
+        "first_name": "Shay",
+        "last_name": "Zambrovski",
+        "email": "shaike.zam@gmail.com",
+        "gender": "Male",
+        "address": "344 Warbler Street",
+        "birthday": "06.10.1989",
+        "favorite_color": "http://dummyimage.com/100x100.png/5fa2dd/ffffff"
+    },
+    {
         "id": 1,
         "first_name": "Ulric",
         "last_name": "Thoma",

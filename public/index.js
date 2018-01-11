@@ -13,6 +13,14 @@ require.config({
         angularResource: {
             deps: ['angular'],
             exports: 'angularResource'
+        },
+        angularRoute: {
+            deps: ['angular'],
+            exports: 'angularRoute'
+        },
+        angularUIRouter: {
+            deps: ['angular'],
+            exports: 'angularUIRouter'
         }
     },
     paths: {
@@ -20,7 +28,9 @@ require.config({
         jquery: '../scripts/jquery/dist/jquery.min',
         angular: '../scripts/angular/angular',  
         bootstrap: '../scripts/bootstrap/dist/js/bootstrap.min',
-        angularResource: '../scripts/angular-resource/angular-resource'
+        angularResource: '../scripts/angular-resource/angular-resource',
+        angularRoute: '../scripts/angular-route/angular-route',
+        angularUIRouter: '../scripts/angular-ui-router/release/angular-ui-router'
     }
 });
 
@@ -28,6 +38,7 @@ require([
     'require',
     'angular',
     'app',
+    './routes',
     'jquery',
     'bootstrap'
 ], function (require, ng) {
