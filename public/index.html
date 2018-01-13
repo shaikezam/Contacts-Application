@@ -9,7 +9,7 @@
         <script src="index.js"></script>
     </head>
     <body ng-app="contactsApplication">
-        <nav class="navbar navbar-inverse">
+        <!--<nav class="navbar navbar-inverse">
             <div class="container">
                 <a class="navbar-brand"
                    ui-sref="home">Acme Product Management</a>
@@ -33,11 +33,26 @@
                     </ul>
                 </div>
             </div>
+        </nav>-->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Contact Application</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#!contacts-list">Contacts List</a></li>
+                    <li><a href="#!contacts-listtt">Contacts pagination</a></li>
+                    <li><a href="productEdit.info({productId:0})">
+                            <i class="glyphicon glyphicon-plus"></i>
+                            Add Contact</a></li>
+                </ul>
+            </div>
         </nav>
-        <div class="container">
-            <div data-ui-view></div>
-        </div>
-        <!--<a href="#!contacts">click</a>
-        <div ng-view></div>-->
+
+            <!--<div data-ui-view></div>
+
+            <a href="#!contacts-list">click</a>-->
+            <div ng-view></div>
+ 
     </body>
 </html>

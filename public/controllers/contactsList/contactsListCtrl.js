@@ -1,13 +1,20 @@
 define(['../module'], function (controllers) {
     'use strict';
 
-    controllers.controller("ContactsApplicationCtrl", ["$scope", "contactsResource", function ($scope, contactsResource) {
+    controllers.controller("ContactsListCtrl", ["$scope", "contactsListResource", function ($scope, contactsResource) {
+            
+            $scope.showFavoriteColor = false;
+            $scope.filterPlaceHolder = "Search for contact";
 
             $scope.toggleFavoriteColor = function () {
                 $scope.showFavoriteColor = !$scope.showFavoriteColor;
             };
 
-            $scope.showFavoriteColor = false;
+            $scope.searchForContact = function () {
+                console.log($scope.filterString);
+            };
+
+            
             contactsResource.query(function (res) {
                 this.contacts = res;
             }.bind($scope));

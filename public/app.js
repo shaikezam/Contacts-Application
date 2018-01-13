@@ -7,6 +7,6 @@ define([
 ], function (ng) {
     'use strict';
 
-    return ng.module('contactsApplication', ['contactsApplication.controllers', 'contactsApplication.services', 'ui.router']);
+    return ng.module('contactsApplication', ['contactsApplication.controllers', 'contactsApplication.services', 'ngRoute']);
 });
 

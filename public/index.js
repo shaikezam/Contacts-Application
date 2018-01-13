@@ -30,7 +30,7 @@ require.config({
         bootstrap: '../scripts/bootstrap/dist/js/bootstrap.min',
         angularResource: '../scripts/angular-resource/angular-resource',
         angularRoute: '../scripts/angular-route/angular-route',
-        angularUIRouter: '../scripts/angular-ui-router/release/angular-ui-router'
+        angularUIRouter: '../scripts/@uirouter/angularjs/release/angular-ui-router'
     }
 });
 

@@ -1,9 +1,13 @@
-<div class="panel">
+<div class="panel panel-default">
     <div class="panel-heading"
-         style="font-size:large">Product
+         style="font-size:large">Contact
         List
     </div>
+
     <div class="panel-body">
+        <div class="form-group">
+            <input type="text" class="form-control" id="usr" placeholder="{{filterPlaceHolder}}" ng-change="searchForContact()" ng-model="filterString">
+        </div>
         <table class="table table-hover table-bordered">
 
             <thead>
@@ -15,8 +19,9 @@
                             {{showFavoriteColor ? "Hide" : "Show"}} Favorite Color
                         </button>
                     </td>
+                    <td>ID</td>
                     <td>Name</td>
-                    <td>eMail</td>
+                    <td>Email</td>
                     <td>Gender</td>
                     <td>Address</td>
                     <td>Birthday</td>
@@ -28,6 +33,7 @@
                         <img ng-if="showFavoriteColor"
                              ng-src="{{contact.favorite_color}}">
                     </td>
+                    <td><a href="/#!contacts-list/{{contact.id }}"</a>{{ contact.id}}</td>
                     <td>{{ contact.first_name + ' ' + contact.last_name}}</td>
                     <td>{{ contact.email}}</td>
                     <td>{{ contact.gender}}</td>
