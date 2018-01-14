@@ -1,3 +1,3 @@
 define([
-    './contactsListResource'
+    './contactsResource'
 ], function () {});
