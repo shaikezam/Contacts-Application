@@ -1,1 +1,60 @@
-<H3>Hello World</H3>
+<div class="panel panel-default">
+    <div class="panel-heading" style="font-size:large">
+        {{title}}
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row myform">
+                    <div class="col-md-2">ID</div>
+                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.id}}" readonly></div>
+                </div>
+                <div class="row myform">
+                    <div class="col-md-2">First name:</div>
+                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.first_name}}"></div>
+                    
+                </div>
+                <div class="row myform">
+                    <div class="col-md-2">Last name:</div>
+                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.last_name}}"></div>
+                </div>
+                <div class="row myform">
+                    <div class="col-md-2">Email</div>
+                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.email}}"></div>
+                </div>
+                <div class="row myform">
+                    <div class="col-md-2">Gender</div>
+                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.gender}}"></div>
+                </div>
+                <div class="row myform">
+                    <div class="col-md-2">Address</div>
+                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.address}}"></div>
+                </div>
+                <div class="row myform">
+                    <div class="col-md-2">Birthday:</div>
+                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.birthday}}"></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <img class="center-block img-responsive"
+                     ng-src="{{contact.favorite_color}}"
+                     title="Favorite Color">
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-default"
+           href="/#!contacts-list/{{contact.id}}/"
+           style="width:80px">
+            <I class="glyphicon glyphicon-chevron-left"></i>
+            Back
+        </a>
+        <a class="btn btn-default"
+           href="/#!contacts-list/{{contact.id}}/contactDetailsEdit"
+           style="width:80px;margin-left:10px">
+            Save
+        </a>
+    </div>
+</div>
