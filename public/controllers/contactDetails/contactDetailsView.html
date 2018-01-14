@@ -28,15 +28,14 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2">Birthday:</div>
-                    <div class="col-md-6">{{contact.birthday }}</div>
+                    <div class="col-md-6">{{contact.birthday | date}}</div>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <img class="center-block img-responsive"
-                     style="width:200px;margin:2px;"
-                     ng-src="{{vm.product.imageUrl}}"
-                     title="{{vm.product.productName}}">
+                     ng-src="{{contact.favorite_color}}"
+                     title="Favorite Color">
             </div>
         </div>
     </div>
