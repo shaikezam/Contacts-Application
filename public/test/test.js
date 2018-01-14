@@ -22,18 +22,17 @@ preem.testModule("Test sign of players", function (beforeEach, checkIf, when, th
     });
 
     when().iCanSeeElement({
-        id: 'p1'
-    }, 'Player 1 user name field found', 'Player 1 user name field not found');
+        id: 'main-panel'
+    }, "can see the main panel", "can't see the main panel");
 
     then().iDoActionOnElement({
-        id: 'p1',
-        action: Preem.CONSTANTS.ACTIONS.TYPE,
-        text: 'Player1'
-    }, 'Player 1 user name is typed', 'Player 1 user name is not typed');
+        id: 'contacts-list',
+        action: Preem.CONSTANTS.ACTIONS.CLICK
+    }, 'Click on contacts list link', 'Cant click on contacts list link');
 
     when().iCanSeeElement({
-        id: 'p2'
-    }, 'Player 2 user name field found', 'Player 2 user name field not found');
+        id: 'usr'
+    }, 'Can see search contact element', 'Cant see search contact element');
 
     then().iDoActionOnElement({
         id: 'p2',
