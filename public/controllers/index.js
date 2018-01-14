@@ -1,4 +1,5 @@
 define([
     './contactsList/contactsListCtrl',
-    './contactDetails/contactDetailsCtrl'
+    './contactDetails/contactDetailsCtrl',
+    './contactDetailsEdit/contactDetailsEditCtrl'
 ], function () {});

@@ -15,9 +15,22 @@ define(['./app', 'angularRoute'], function (app) {
                         });
                     }]
             }
-        }).when("/contacts-list/:contactId", {
+        }).when("/contacts-list/:contactId/", {
             templateUrl: "./controllers/contactDetails/contactDetailsView.html",
             controller: "ContactDetailsCtrl",
+            resolve: {
+                contactsResource: "contactsResource",
+                contact: function (contactsResource, $route) {
+                    return contactsResource.get({contactId: $route.current.params.contactId}).$promise.then(function (contact) {
+                        return contact;
+                    }, function () {
+                        console.error("Not found");
+                    });
+                }
+            }
+        }).when("/contacts-list/:contactId/contactDetailsEdit", {
+            templateUrl: "./controllers/contactDetailsEdit/contactDetailsEditView.html",
+            controller: "ContactDetailsEditCtrl",
             resolve: {
                 contactsResource: "contactsResource",
                 contact: function (contactsResource, $route) {

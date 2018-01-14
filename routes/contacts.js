@@ -12,7 +12,9 @@ router.get('/', function (req, res, next) {
     })
 });
 router.get('/:contactId', function (req, res, next) {
+    
     let id = req.params.contactId;
+    
     fs.readFile('./data/contacts.json', function (err, content) {
         if (err)
             throw err;

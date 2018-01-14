@@ -20,7 +20,9 @@
                         </button>
                     </td>
                     <td>ID</td>
-                    <td>Name</td>
+                    <td>First name</td>
+                    <td>Last name</td>
+
                     <td>Email</td>
                     <td>Gender</td>
                     <td>Address</td>
@@ -34,7 +36,8 @@
                              ng-src="{{contact.favorite_color}}">
                     </td>
                     <td><a href="/#!contacts-list/{{contact.id}}"</a>{{ contact.id}}</td>
-                    <td>{{ contact.first_name + ' ' + contact.last_name}}</td>
+                    <td>{{ contact.first_name}}</td>
+                    <td>{{ contact.last_name}}</td>
                     <td>{{ contact.email}}</td>
                     <td>{{ contact.gender}}</td>
                     <td>{{ contact.address}}</td>
