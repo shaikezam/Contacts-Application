@@ -44,18 +44,39 @@
                             <div class="col-md-6"><input type="text" id="contact-address" class="form-control" ng-model="contact.address"></div>
                         </div>
                     </div>
+
                     <div class="row myform">
                         <div class="form-group">
-                            <div class="col-md-2"><label for="contact-birthday">Birthday:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-birthday" class="form-control" ng-model="contact.birthday"></div>
+                            <label class="col-md-2 control-label"
+                                   for="contact-birthday">Birthday:</label>
+
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input class="form-control"
+                                           id="contact-birthday"
+                                           type="text"
+                                           datepicker-popup="dd.MM.yyyy"
+                                           is-open="datePicker.opened"
+                                           ng-model="contact.birthday"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default"
+                                                ng-click="openDatePicker($event)">
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-                    <img class="center-block img-responsive"
-                         ng-src="{{contact.favorite_color}}"
-                         title="Favorite Color">
+                    <div class="row myform">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label"
+                                   for="contact-birthday">Favorite Color:</label>
+                            <div class="col-md-2">
+                                <img class="center-block img-responsive"
+                                     ng-src="{{contact.favorite_color}}"
+                                     title="Favorite Color">
+                            </div></div></div>
                 </div>
             </div>
         </div>
@@ -73,7 +94,7 @@
                 Save
             </button>
         </div>
-
-
     </div>
+
+
 </form>

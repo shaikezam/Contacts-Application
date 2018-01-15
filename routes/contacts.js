@@ -20,9 +20,7 @@ router.get('/:contactId', function (req, res, next) {
             throw err;
         var contactsJson = JSON.parse(content);
 
-        let contact = (contactsJson[id] && contactsJson[id]['id'] && contactsJson[id]['id'].toString() === id) ? contactsJson[id] : contactsJson;
-
-        res.send(contact);
+        res.send(contactsJson[id]);
 
     });
 });
