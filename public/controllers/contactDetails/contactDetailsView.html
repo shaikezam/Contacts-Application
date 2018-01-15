@@ -4,45 +4,60 @@
     </div>
 
     <div class="panel-body">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-2">ID</div>
-                    <div class="col-md-6">{{contact.id}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">First name:</div>
-                    <div class="col-md-6">{{contact.first_name}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">Last name:</div>
-                    <div class="col-md-6">{{contact.last_name}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">Email</div>
-                    <div class="col-md-6">{{contact.email}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">Gender</div>
-                    <div class="col-md-6">{{contact.gender}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">Address</div>
-                    <div class="col-md-6">{{contact.address}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">Birthday:</div>
-                    <div class="col-md-6">{{contact.birthday| date}}</div>
-                </div>
-            </div>
 
-            <div class="col-md-6">
-                <img class="center-block img-responsive"
-                     ng-src="{{contact.favorite_color}}"
-                     title="Favorite Color">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-id">ID:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-id" class="form-control" ng-model="contact.id" readonly disabled></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-first-name">First Name:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-first-name" class="form-control" ng-model="contact.first_name" readonly></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-last-name">Last Name:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-last-name" class="form-control" ng-model="contact.last_name" readonly></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-email">Email:</label></div>
+                            <div class="col-md-6"><input type="email" id="contact-email" class="form-control" ng-model="contact.email" readonly></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-gender">Gender:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-gender" class="form-control" ng-model="contact.gender" readonly></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-address">Address:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-address" class="form-control" ng-model="contact.address" readonly></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-birthday">Birthday:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-birthday" class="form-control" ng-model="contact.birthday" readonly></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <img class="center-block img-responsive"
+                         ng-src="{{contact.favorite_color}}"
+                         title="Favorite Color">
+                </div>
             </div>
         </div>
-    </div>
     <div class="panel-footer">
         <a class="btn btn-default"
            href="#!contacts-list"

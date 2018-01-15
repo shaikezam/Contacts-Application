@@ -3,8 +3,13 @@ define(['../module'], function (controllers) {
 
     controllers.controller("ContactDetailsEditCtrl", ["$scope", "$routeParams", "contact", function ($scope, $routeParams, contact) {
             var id = $routeParams.contactId;
-            $scope.title = "Contact Details:";
-            $scope.contact = contact;
+            $scope.title = "Edit Contact Details:";
 
+            $scope.contact = contact;
+            $scope.saveEditedContact = function () {
+                console.log("LOL");
+            }.bind($scope);
+            //{{one way}}
+            //ng-modal="data.data" two way
         }]);
 });

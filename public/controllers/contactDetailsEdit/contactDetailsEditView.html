@@ -1,60 +1,79 @@
-<div class="panel panel-default">
-    <div class="panel-heading" style="font-size:large">
-        {{title}}
-    </div>
+<form>
+    <div class="panel panel-default">
+        <div class="panel-heading" style="font-size:large">
+            {{title}}
+        </div>
 
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row myform">
-                    <div class="col-md-2">ID</div>
-                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.id}}" readonly></div>
-                </div>
-                <div class="row myform">
-                    <div class="col-md-2">First name:</div>
-                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.first_name}}"></div>
-                    
-                </div>
-                <div class="row myform">
-                    <div class="col-md-2">Last name:</div>
-                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.last_name}}"></div>
-                </div>
-                <div class="row myform">
-                    <div class="col-md-2">Email</div>
-                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.email}}"></div>
-                </div>
-                <div class="row myform">
-                    <div class="col-md-2">Gender</div>
-                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.gender}}"></div>
-                </div>
-                <div class="row myform">
-                    <div class="col-md-2">Address</div>
-                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.address}}"></div>
-                </div>
-                <div class="row myform">
-                    <div class="col-md-2">Birthday:</div>
-                    <div class="col-md-6"><input type="email" class="form-control" ng-model="newFirstName" id="firstname" placeholder = "{{contact.birthday}}"></div>
-                </div>
-            </div>
+        <div class="panel-body">
 
-            <div class="col-md-6">
-                <img class="center-block img-responsive"
-                     ng-src="{{contact.favorite_color}}"
-                     title="Favorite Color">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-id">ID:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-id" class="form-control" ng-model="contact.id" readonly disabled></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-first-name">First Name:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-first-name" class="form-control" ng-model="contact.first_name"></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-last-name">Last Name:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-last-name" class="form-control" ng-model="contact.last_name"></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-email">Email:</label></div>
+                            <div class="col-md-6"><input type="email" id="contact-email" class="form-control" ng-model="contact.email"></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-gender">Gender:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-gender" class="form-control" ng-model="contact.gender"></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-address">Address:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-address" class="form-control" ng-model="contact.address"></div>
+                        </div>
+                    </div>
+                    <div class="row myform">
+                        <div class="form-group">
+                            <div class="col-md-2"><label for="contact-birthday">Birthday:</label></div>
+                            <div class="col-md-6"><input type="text" id="contact-birthday" class="form-control" ng-model="contact.birthday"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <img class="center-block img-responsive"
+                         ng-src="{{contact.favorite_color}}"
+                         title="Favorite Color">
+                </div>
             </div>
         </div>
+        <div class="panel-footer">
+            <a class="btn btn-default"
+               href="/#!contacts-list/{{contact.id}}/"
+               style="width:80px">
+                <I class="glyphicon glyphicon-chevron-left"></i>
+                Back
+            </a>
+            <button class="btn btn-default"
+                    type="submit"
+                    ng-click="saveEditedContact()"
+                    style="width:80px;margin-left:10px">
+                Save
+            </button>
+        </div>
+
+
     </div>
-    <div class="panel-footer">
-        <a class="btn btn-default"
-           href="/#!contacts-list/{{contact.id}}/"
-           style="width:80px">
-            <I class="glyphicon glyphicon-chevron-left"></i>
-            Back
-        </a>
-        <a class="btn btn-default"
-           href="/#!contacts-list/{{contact.id}}/contactDetailsEdit"
-           style="width:80px;margin-left:10px">
-            Save
-        </a>
-    </div>
-</div>
+</form>
