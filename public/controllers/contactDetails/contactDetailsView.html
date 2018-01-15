@@ -45,23 +45,39 @@
                     </div>
                     <div class="row myform">
                         <div class="form-group">
-                            <div class="col-md-2"><label for="contact-birthday">Birthday:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-birthday" class="form-control" ng-model="contact.birthday" readonly></div>
-                        </div>
-                    </div>
+                            <label class="col-md-2 control-label"
+                                   for="contact-birthday">Birthday:</label>
+
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input class="form-control"
+                                           id="contact-birthday"
+                                           type="text"
+                                           uib-datepicker-popup="{{format}}"
+                                           is-open="isOpen"
+                                           ng-model="contact.birthday" readonly>
+<span class="input-group-btn">
+    <button class="btn btn-default"
+            ng-click="openCalendar($event)" disabled>
+        <i class="glyphicon glyphicon-calendar"></i>
+    </button>
+</span>
+</div>
+</div>
+</div>
+</div>
                 </div>
 
                 <div class="col-md-6">
                     <img class="center-block img-responsive"
-                         ng-src="{{contact.favorite_color}}"
+                         ng-src="{{contact.image}}"
                          title="Favorite Color">
                 </div>
             </div>
         </div>
     <div class="panel-footer">
         <a class="btn btn-default"
-           href="#!contacts-list"
-           style="width:80px">
+           href="#!contacts-list">
             <I class="glyphicon glyphicon-chevron-left"></i>
             Back
         </a>

@@ -25,6 +25,10 @@ require.config({
         angularUiBootstrap: {
             deps: ['angular'],
             exports: 'angularUiBootstrap'
+        },
+        angularUiBootstrapTpls: {
+            deps: ['angular'],
+            exports: 'angularUiBootstrapTpls'
         }
     },
     paths: {
@@ -35,7 +39,8 @@ require.config({
         angularResource: '../scripts/angular-resource/angular-resource',
         angularRoute: '../scripts/angular-route/angular-route',
         angularUIRouter: '../scripts/@uirouter/angularjs/release/angular-ui-router',
-        angularUiBootstrap: '../scripts/angular-ui-bootstrap/dist/ui-bootstrap-tpls'
+        angularUiBootstrapTpls: '../scripts/angular-ui-bootstrap/dist/ui-bootstrap-tpls',
+        angularUiBootstrap: '../scripts/angular-ui-bootstrap/dist/ui-bootstrap'
     }
 });
 
@@ -46,7 +51,7 @@ require([
     './routes',
     'jquery',
     'bootstrap',
-    'angularUiBootstrap'
+    'angularUiBootstrapTpls'
 ], function (require, ng) {
     'use strict';
     ng.bootstrap(document, ['contactsApplication']);

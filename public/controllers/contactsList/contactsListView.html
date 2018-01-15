@@ -15,8 +15,8 @@
                     <td>
                         <button type="button"
                                 class="btn btn"
-                                ng-click="toggleFavoriteColor()">
-                            {{showFavoriteColor ? "Hide" : "Show"}} Favorite Color
+                                ng-click="toggleImage()">
+                            {{showImage ? "Hide" : "Show"}} Image
                         </button>
                     </td>
                     <td>ID</td>
@@ -32,8 +32,8 @@
             <tbody>
                 <tr ng-repeat="contact in contacts">
                     <td>
-                        <img ng-if="showFavoriteColor"
-                             ng-src="{{contact.favorite_color}}">
+                        <img ng-if="showImage"
+                             ng-src="{{contact.image}}">
                     </td>
                     <td><a href="/#!contacts-list/{{contact.id}}"</a>{{ contact.id}}</td>
                     <td>{{ contact.first_name}}</td>

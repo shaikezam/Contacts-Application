@@ -17,13 +17,13 @@
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-first-name">First Name:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-first-name" class="form-control" ng-model="contact.first_name"></div>
+                            <div class="col-md-6"><input type="text" id="contact-first-name" class="form-control" ng-model="contact.first_name" readonly></div>
                         </div>
                     </div>
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-last-name">Last Name:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-last-name" class="form-control" ng-model="contact.last_name"></div>
+                            <div class="col-md-6"><input type="text" id="contact-last-name" class="form-control" ng-model="contact.last_name" readonly></div>
                         </div>
                     </div>
                     <div class="row myform">
@@ -41,7 +41,7 @@
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-address">Address:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-address" class="form-control" ng-model="contact.address"></div>
+                            <div class="col-md-6"><input type="text" id="contact-address" class="form-control" ng-model="contact.address" readonly></div>
                         </div>
                     </div>
 
@@ -55,35 +55,31 @@
                                     <input class="form-control"
                                            id="contact-birthday"
                                            type="text"
-                                           datepicker-popup="dd.MM.yyyy"
-                                           is-open="datePicker.opened"
-                                           ng-model="contact.birthday"/>
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default"
-                                                ng-click="openDatePicker($event)">
-                                            <i class="glyphicon glyphicon-calendar"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row myform">
-                        <div class="form-group">
-                            <label class="col-md-2 control-label"
-                                   for="contact-birthday">Favorite Color:</label>
-                            <div class="col-md-2">
-                                <img class="center-block img-responsive"
-                                     ng-src="{{contact.favorite_color}}"
-                                     title="Favorite Color">
-                            </div></div></div>
-                </div>
-            </div>
-        </div>
-        <div class="panel-footer">
-            <a class="btn btn-default"
-               href="/#!contacts-list/{{contact.id}}/"
-               style="width:80px">
+                                           uib-datepicker-popup="{{format}}"
+                                           is-open="isOpen"
+                                           ng-model="contact.birthday" readonly>
+<span class="input-group-btn">
+    <button class="btn btn-default"
+            ng-click="openCalendar($event)" disabled>
+        <i class="glyphicon glyphicon-calendar"></i>
+    </button>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="col-md-6">
+    <img class="center-block img-responsive"
+         ng-src="{{contact.image}}"
+         title="Favorite Color">
+</div>
+</div>
+</div>
+<div class="panel-footer">
+    <a class="btn btn-default"
+       href="/#!contacts-list/{{contact.id}}/">
                 <I class="glyphicon glyphicon-chevron-left"></i>
                 Back
             </a>

@@ -3,11 +3,11 @@ define(['../module'], function (controllers) {
 
     controllers.controller("ContactsListCtrl", ["$scope", 'contacts', function ($scope, contacts) {
             
-            $scope.showFavoriteColor = false;
+            $scope.showImage = false;
             $scope.filterPlaceHolder = "Search for contact";
 
-            $scope.toggleFavoriteColor = function () {
-                $scope.showFavoriteColor = !$scope.showFavoriteColor;
+            $scope.toggleImage = function () {
+                $scope.showImage = !$scope.showImage;
             };
 
             $scope.searchForContact = function () {

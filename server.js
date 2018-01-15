@@ -10,6 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // include scripts located inside the node_modules folder
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
+app.use('/assets', express.static(__dirname + '/public/assets'));
 app.use('/', index);
 app.use('/users', users);
 app.use('/api/contacts', contacts);
