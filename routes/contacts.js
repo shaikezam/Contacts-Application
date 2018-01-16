@@ -20,7 +20,9 @@ router.get('/:contactId', function (req, res, next) {
             throw err;
         var contactsJson = JSON.parse(content);
 
-        res.send(contactsJson[id]);
+        let contact = (contactsJson[id] !== undefined && contactsJson[id] && contactsJson[id]["id"] >= 0) ? contactsJson[id] : {status: "Not found contact"};
+
+        res.send(contact);
 
     });
 });
