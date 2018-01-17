@@ -1,9 +1,10 @@
-<div class="panel panel-default">
-    <div class="panel-heading" style="font-size:large">
-        {{title}}
-    </div>
+<form name="contactForm">
+    <div class="panel panel-default"  ng-model="editMode">
+        <div class="panel-heading" style="font-size:large">
+            {{title}}
+        </div>
 
-    <div class="panel-body">
+        <div class="panel-body">
 
             <div class="row">
                 <div class="col-md-6">
@@ -28,13 +29,13 @@
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-email">Email:</label></div>
-                            <div class="col-md-6"><input type="email" id="contact-email" class="form-control" ng-model="contact.email" readonly></div>
+                            <div class="col-md-6"><input type="email" id="contact-email" class="form-control" ng-model="contact.email"  ng-readonly="editMode"></div>
                         </div>
                     </div>
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-gender">Gender:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-gender" class="form-control" ng-model="contact.gender" readonly></div>
+                            <div class="col-md-6"><input type="text" id="contact-gender" class="form-control" ng-model="contact.gender" ng-readonly="editMode"></div>
                         </div>
                     </div>
                     <div class="row myform">
@@ -56,16 +57,16 @@
                                            uib-datepicker-popup="{{format}}"
                                            is-open="isOpen"
                                            ng-model="contact.birthday" readonly>
-<span class="input-group-btn">
-    <button class="btn btn-default"
-            ng-click="openCalendar($event)" disabled>
-        <i class="glyphicon glyphicon-calendar"></i>
-    </button>
-</span>
-</div>
-</div>
-</div>
-</div>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default"
+                                                ng-click="openCalendar($event)" disabled>
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-md-6">
@@ -75,16 +76,23 @@
                 </div>
             </div>
         </div>
-    <div class="panel-footer">
-        <a class="btn btn-default"
-           href="#!contacts-list">
-            <I class="glyphicon glyphicon-chevron-left"></i>
-            Back
-        </a>
-        <a class="btn btn-default"
-           href="/#!contacts-list/{{contact.id}}/contactDetailsEdit"
-           style="width:80px;margin-left:10px">
-            Edit
-        </a>
+
+        <div class="panel-footer">
+            <a class="btn btn-default"
+               href="#!contacts-list">
+                <I class="glyphicon glyphicon-chevron-left"></i>
+                Back
+            </a>
+            <a class="btn btn-default" ng-if="editMode === true"
+               href="/#!contacts-list/{{contact.id}}/contactDetailsEdit"
+               style="width:80px;margin-left:10px">
+                Edit
+            </a>
+            <button type="submit" class="btn btn-default" ng-if="editMode === false"
+                    ng-click="contactForm.$valid && saveContact($event)"
+                    style="width:80px;margin-left:10px">
+                Save
+            </button>
+        </div>
     </div>
-</div>
+</form>

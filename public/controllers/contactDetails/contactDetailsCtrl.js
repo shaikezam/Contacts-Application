@@ -1,7 +1,8 @@
 define(['../module'], function (controllers) {
     'use strict';
 
-    controllers.controller("ContactDetailsCtrl", ["$scope", "$routeParams", "contact", function ($scope, $routeParams, contact) {
+    controllers.controller("ContactDetailsCtrl", ["$scope", "$location", "$routeParams", "contact", function ($scope, $location, $routeParams, contact) {
+            $scope.editMode = true;
             var id = $routeParams.contactId, newDate = contact.birthday.split(".");
 
             contact.birthday = new Date(newDate[2], newDate[1] - 1, newDate[0]);
@@ -10,7 +11,6 @@ define(['../module'], function (controllers) {
             $scope.contact = contact;
 
             $scope.format = 'dd.MM.yyyy';
-            $scope.title = "Edit Contact Details:";
             $scope.isOpen = false;
             $scope.contact = contact;
 

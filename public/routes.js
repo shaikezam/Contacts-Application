@@ -29,7 +29,7 @@ define(['./app', 'angularRoute'], function (app) {
                 }
             }
         }).when("/contacts-list/:contactId/contactDetailsEdit", {
-            templateUrl: "./controllers/contactDetailsEdit/contactDetailsEditView.html",
+            templateUrl: "./controllers/contactDetails/contactDetailsView.html",
             controller: "ContactDetailsEditCtrl",
             resolve: {
                 contactsResource: "contactsResource",
@@ -41,6 +41,9 @@ define(['./app', 'angularRoute'], function (app) {
                     });
                 }
             }
+        }).when("/newContact", {
+            templateUrl: "./controllers/contactDetails/contactDetailsView.html",
+            controller: "NewContactDetailsCtrl"
         }).when("/", {
             templateUrl: "./controllers/welcome/welcomeView.html"
         }).otherwise("/");
