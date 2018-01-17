@@ -4,8 +4,11 @@ var express = require('express'),
         users = require('./routes/users'),
         contacts = require('./routes/contacts'),
         test = require('./routes/test'),
-        app = express();
+        app = express(),
+        bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // include scripts located inside the node_modules folder

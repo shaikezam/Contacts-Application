@@ -1,21 +1,22 @@
-var express = require('express'),
+let express = require('express'),
         fs = require("fs"),
-        router = express.Router();
+        router = express.Router(),
+        fileLocation = './data/contacts.json';
 
 router.get('/', function (req, res, next) {
 
-    fs.readFile('./data/contacts.json', function (err, content) {
+    fs.readFile(fileLocation, function (err, content) {
         if (err)
             throw err;
         var contactsJson = JSON.parse(content);
         res.send(contactsJson);
-    })
+    });
 });
 router.get('/:contactId', function (req, res, next) {
-    
+
     let id = req.params.contactId;
-    
-    fs.readFile('./data/contacts.json', function (err, content) {
+
+    fs.readFile(fileLocation, function (err, content) {
         if (err)
             throw err;
         var contactsJson = JSON.parse(content);
@@ -24,6 +25,21 @@ router.get('/:contactId', function (req, res, next) {
 
         res.send(contact);
 
+    });
+});
+router.put('/:contactId', function (req, res, next) {
+
+    let id = req.params.contactId,
+            updatedContact = req.body;
+
+    fs.readFile(fileLocation, function (err, content) {
+        if (err)
+            throw err;
+        var contactsJson = JSON.parse(content);
+        contactsJson[id] = updatedContact;
+        fs.writeFile(fileLocation, JSON.stringify(contactsJson), 'utf8', function() {
+            res.send({updatedContact});
+        });
     });
 });
 router.post('/', function (req, res, next) {
@@ -39,6 +55,6 @@ router.post('/', function (req, res, next) {
     });
 });
 function readDataFile() {
-    
+
 }
 module.exports = router;

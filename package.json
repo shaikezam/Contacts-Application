@@ -7,6 +7,7 @@
     },
     "dependencies": {
         "express": "~4.16.*",
+        "body-parser": "1.18.2",
         "requirejs": "2.3.5",
         "jquery": "2.2.4",
         "angular": "1.6.8",
