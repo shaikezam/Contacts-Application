@@ -1,16 +1,16 @@
 define(['../module'], function (controllers) {
     'use strict';
 
-    controllers.controller("ContactDetailsEditCtrl", ["$scope", "$location", "$routeParams", "contactsResource", "contact", function ($scope, $location, $routeParams, contactsResource, contact) {
+    controllers.controller("ContactDetailsDeleteCtrl", ["$scope", "$location", "$routeParams", "contactsResource", "contact", function ($scope, $location, $routeParams, contactsResource, contact) {
             $scope.enableForm = {
                 contactId: true,
-                contactFirstName: false,
-                contactLastName: false,
-                contactEmail: false,
-                contactGender: false,
+                contactFirstName: true,
+                contactLastName: true,
+                contactEmail: true,
+                contactGender: true,
                 contactBirthDay: true,
-                contactAddress: false,
-                action: "save"
+                contactAddress: true,
+                action: "delete"
             };
             var id = $routeParams.contactId, newDate = contact.birthday.split(".");
 
@@ -28,12 +28,12 @@ define(['../module'], function (controllers) {
                 $scope.isOpen = !$scope.isOpen;
             };
 
-            $scope.saveContact = function (event) {
+            $scope.deleteContact = function (event) {
                 var birthday = contact.birthday;
                 contact.birthday = birthday.getDate().toString() + '.' +  (birthday.getMonth()+1).toString() + '.' +  birthday.getFullYear().toString();
                 console.log($scope.contact);
                 event.preventDefault() //Form submission canceled because the form is not connected
-                contactsResource.update({contactId: $routeParams.contactId}, $scope.contact);
+                contactsResource.remove ({contactId: $routeParams.contactId}, $scope.contact);
                 $location.path("/!#");
             };
             //{{one way}}

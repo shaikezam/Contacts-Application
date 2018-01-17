@@ -1,5 +1,5 @@
 <form name="contactForm">
-    <div class="panel panel-default"  ng-model="editMode">
+    <div class="panel panel-default">
         <div class="panel-heading" style="font-size:large">
             {{title}}
         </div>
@@ -11,37 +11,37 @@
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-id">ID:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-id" class="form-control" ng-model="contact.id" readonly disabled></div>
+                            <div class="col-md-6"><input type="text" id="contact-id" class="form-control" ng-model="contact.id" ng-readonly="enableForm.contactId" ng-disabled="enableForm.contactId"></div>
                         </div>
                     </div>
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-first-name">First Name:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-first-name" class="form-control" ng-model="contact.first_name" readonly></div>
+                            <div class="col-md-6"><input type="text" id="contact-first-name" class="form-control" ng-model="contact.first_name" ng-readonly="enableForm.contactFirstName"></div>
                         </div>
                     </div>
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-last-name">Last Name:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-last-name" class="form-control" ng-model="contact.last_name" readonly></div>
+                            <div class="col-md-6"><input type="text" id="contact-last-name" class="form-control" ng-model="contact.last_name" ng-readonly="enableForm.contactLastName"></div>
                         </div>
                     </div>
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-email">Email:</label></div>
-                            <div class="col-md-6"><input type="email" id="contact-email" class="form-control" ng-model="contact.email"  ng-readonly="editMode"></div>
+                            <div class="col-md-6"><input type="email" id="contact-email" class="form-control" ng-model="contact.email" ng-readonly="enableForm.contactEmail"></div>
                         </div>
                     </div>
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-gender">Gender:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-gender" class="form-control" ng-model="contact.gender" readonly></div>
+                            <div class="col-md-6"><input type="text" id="contact-gender" class="form-control" ng-model="contact.gender" ng-readonly="enableForm.contactGender"></div>
                         </div>
                     </div>
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-address">Address:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-address" class="form-control" ng-model="contact.address" readonly></div>
+                            <div class="col-md-6"><input type="text" id="contact-address" class="form-control" ng-model="contact.address" ng-readonly="enableForm.contactAddress"></div>
                         </div>
                     </div>
                     <div class="row myform">
@@ -56,11 +56,13 @@
                                            type="text"
                                            uib-datepicker-popup="{{format}}"
                                            is-open="isOpen"
-                                           ng-model="contact.birthday" readonly>
+                                           ui-date
+                                           ng-model="contact.birthday" ng-readonly="enableForm.contactBirthDay">
                                     <span class="input-group-btn">
                                         <button class="btn btn-default"
-                                                ng-click="openCalendar($event)" disabled>
-                                            <i class="glyphicon glyphicon-calendar"></i>
+                                                ng-click="openCalendar($event)"
+                                                ng-disabled="enableForm.contactBirthDay">
+                                            <i class="glyphicon glyphicon-calendar" ></i>
                                         </button>
                                     </span>
                                 </div>
@@ -72,7 +74,8 @@
                 <div class="col-md-6">
                     <img class="center-block img-responsive"
                          ng-src="{{contact.image}}"
-                         title="Contact Image">
+                         title="Contact Image"
+                         height='138' width='145'>
                 </div>
             </div>
         </div>
@@ -83,15 +86,25 @@
                 <I class="glyphicon glyphicon-chevron-left"></i>
                 Back
             </a>
-            <a class="btn btn-default" ng-if="editMode === true"
+            <a class="btn btn-default" ng-if="enableForm.action === 'edit'"
                href="/#!contacts-list/{{contact.id}}/contactDetailsEdit"
                style="width:80px;margin-left:10px">
                 Edit
             </a>
-            <button type="submit" class="btn btn-default" ng-if="editMode === false"
+            <button type="submit" class="btn btn-default" ng-if="enableForm.action === 'save'"
                     ng-click="contactForm.$valid && saveContact($event)"
                     style="width:80px;margin-left:10px">
                 Save
+            </button>
+            <button type="submit" class="btn btn-default" ng-if="enableForm.action === 'create'"
+                    ng-click="contactForm.$valid && createContact($event)"
+                    style="width:80px;margin-left:10px">
+                Create
+            </button>
+            <button type="submit" class="btn btn-default" ng-if="enableForm.action === 'delete'"
+                    ng-click="contactForm.$valid && deleteContact($event)"
+                    style="width:80px;margin-left:10px">
+                Delete
             </button>
         </div>
     </div>

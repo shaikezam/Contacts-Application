@@ -41,9 +41,33 @@ define(['./app', 'angularRoute'], function (app) {
                     });
                 }
             }
+        }).when("/contacts-list/:contactId/contactDetailsDelete", {
+            templateUrl: "./controllers/contactDetails/contactDetailsView.html",
+            controller: "ContactDetailsDeleteCtrl",
+            resolve: {
+                contactsResource: "contactsResource",
+                contact: function (contactsResource, $route) {
+                    return contactsResource.get({contactId: $route.current.params.contactId}).$promise.then(function (contact) {
+                        return contact;
+                    }, function () {
+                        console.error("Not found");
+                    });
+                }
+            }
         }).when("/newContact", {
             templateUrl: "./controllers/contactDetails/contactDetailsView.html",
-            controller: "NewContactDetailsCtrl"
+            controller: "ContactDetailsNewCtrl",
+            resolve: {
+                //contactsResource: "contactsResource",
+                contacts: ["contactsResource", function (contactsResource) {
+                        //return contactsResource.query();
+                        return contactsResource.query().$promise.then(function (contacts) {
+                            return contacts;
+                        }, function () {
+                            console.error("Not found");
+                        });
+                    }]
+            }
         }).when("/", {
             templateUrl: "./controllers/welcome/welcomeView.html"
         }).otherwise("/");
