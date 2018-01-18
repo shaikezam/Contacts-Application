@@ -17,7 +17,7 @@ define(['../module'], function (controllers) {
             contact.birthday = new Date(newDate[2], newDate[1] - 1, newDate[0]);
 
             $scope.format = 'dd.MM.yyyy';
-            $scope.title = "Edit Contact Details:";
+            $scope.title = "Delete Contact Details:";
             $scope.isOpen = false;
             $scope.contact = contact;
 
@@ -33,7 +33,7 @@ define(['../module'], function (controllers) {
                 contact.birthday = birthday.getDate().toString() + '.' +  (birthday.getMonth()+1).toString() + '.' +  birthday.getFullYear().toString();
                 console.log($scope.contact);
                 event.preventDefault() //Form submission canceled because the form is not connected
-                contactsResource.remove ({contactId: $routeParams.contactId}, $scope.contact);
+                contactsResource.remove ({contactId: $routeParams.contactId});
                 $location.path("/!#");
             };
             //{{one way}}

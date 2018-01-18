@@ -19,11 +19,12 @@ router.get('/:contactId', function (req, res, next) {
     fs.readFile(fileLocation, function (err, content) {
         if (err)
             throw err;
-        let contactsJson = JSON.parse(content),
-                contact = (contactsJson[id] !== undefined && contactsJson[id] && contactsJson[id]["id"] >= 0) ? contactsJson[id] : {status: "Not found contact"};
-
-        res.send(contact);
-
+        let contactsJson = JSON.parse(content);
+        contactsJson.forEach(function (contact) {
+            if (contact.id.toString() === id) {
+                res.send(contact);
+            }
+        });
     });
 });
 router.delete('/:contactId', function (req, res, next) {

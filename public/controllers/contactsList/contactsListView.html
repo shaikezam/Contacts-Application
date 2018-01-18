@@ -8,7 +8,7 @@
         <div class="form-group">
             <input type="text" class="form-control" id="usr" placeholder="{{filterPlaceHolder}}" ng-change="searchForContact()" ng-model="filterString" >
         </div>
-        <table class="table table-hover table-bordered">
+        <table class="table table-primary table-hover table-bordered">
 
             <thead>
                 <tr>
@@ -31,10 +31,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="contact in contacts">
+                <tr ng-repeat="contact in contacts" ng-show="contact.hideContact">
                     <td>
                         <img ng-if="showImage"
-                             ng-src="{{contact.image}}">
+                             ng-src="{{contact.image}}" height='138' width='145'>
                     </td>
                     <td><a href="/#!contacts-list/{{contact.id}}"</a>{{ contact.id}}</td>
                     <td>{{ contact.first_name}}</td>
