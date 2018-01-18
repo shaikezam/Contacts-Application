@@ -68,6 +68,20 @@ define(['./app', 'angularRoute'], function (app) {
                         });
                     }]
             }
+        }).when("/contacts-pagination", {
+            templateUrl: "./controllers/contactPagination/contactPaginationView.html",
+            controller: "ContactPaginationCtrl",
+            resolve: {
+                //contactsResource: "contactsResource",
+                contacts: ["contactsResource", function (contactsResource) {
+                        //return contactsResource.query();
+                        return contactsResource.query().$promise.then(function (contacts) {
+                            return contacts;
+                        }, function () {
+                            console.error("Not found");
+                        });
+                    }]
+            }
         }).when("/", {
             templateUrl: "./controllers/welcome/welcomeView.html"
         }).otherwise("/");

@@ -3,5 +3,6 @@ define([
     './contactDetails/contactDetailsCtrl',
     './contactDetails/contactDetailsEditCtrl',
     './contactDetails/contactDetailsNewCtrl',
-    './contactDetails/ContactDetailsDeleteCtrl'
+    './contactDetails/ContactDetailsDeleteCtrl',
+    './contactPagination/contactPaginationCtrl'
 ], function () {});
