@@ -13,13 +13,14 @@ define(['../module'], function (controllers) {
             $scope.searchForContact = function () {
                 for (var i = 0; i < contacts.length; i++) {
                     var contactName = ($scope.contacts[i]['first_name'] + ' ' + $scope.contacts[i]['last_name']).toLowerCase(),
-                            toShow = contactName.includes($scope.filterString.toLowerCase()) ? true : false;
+                            searchFilter = $scope.filterString.toLowerCase(),
+                            toShow = contactName.includes(searchFilter) ? true : false;
                     $scope.contacts[i]['hideContact'] = toShow;
                 }
             };
-            
+
             $scope.contacts = contacts;
-            
+
             for (var i = 0; i < contacts.length; i++) {
                 $scope.contacts[i]['hideContact'] = true;
             }
