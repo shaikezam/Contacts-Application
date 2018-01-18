@@ -1,5 +1,0 @@
-applications:
-- name: Contacts-Application
-  command: npm start
-  buildpack: nodejs_buildpack
-  memory: 256M

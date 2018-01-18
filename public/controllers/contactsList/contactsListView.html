@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-primary">
     <div class="panel-heading"
          style="font-size:large">Contact
         List
@@ -14,24 +14,40 @@
                 <tr>
                     <td>
                         <button type="button"
-                                class="btn btn"
+                                class="btn btn-primary"
                                 ng-click="toggleImage()">
                             {{showImage ? "Hide" : "Show"}} Image
                         </button>
                     </td>
-                    <td>ID</td>
-                    <td>First name</td>
-                    <td>Last name</td>
+                    <td><a href="#!contacts-list" ng-click="orderByField = 'id'; reverseSort = !reverseSort">
+                            ID <span ng-show="orderByField == 'id'"><span ng-show="!reverseSort"><b>></b></span><span ng-show="reverseSort"><b><</b></span></span>
+                        </a></td>
+                    <td>
+                        <a href="#!contacts-list" ng-click="orderByField = 'first_name'; reverseSort = !reverseSort">
+                            First Name <span ng-show="orderByField == 'first_name'"><span ng-show="!reverseSort"><b>></b></span><span ng-show="reverseSort"><b><</b></span></span>
+                        </a>
+                    </td>
+                    <td><a href="#!contacts-list" ng-click="orderByField = 'last_name'; reverseSort = !reverseSort">
+                            Last Name <span ng-show="orderByField == 'last_name'"><span ng-show="!reverseSort"><b>></b></span><span ng-show="reverseSort"><b><</b></span></span>
+                        </a></td>
 
-                    <td>Email</td>
-                    <td>Gender</td>
-                    <td>Address</td>
-                    <td>Birthday</td>
+                    <td><a href="#!contacts-list" ng-click="orderByField = 'email'; reverseSort = !reverseSort">
+                            Email <span ng-show="orderByField == 'email'"><span ng-show="!reverseSort"><b>></b></span><span ng-show="reverseSort"><b><</b></span></span>
+                        </a></td>
+                    <td><a href="#!contacts-list" ng-click="orderByField = 'gender'; reverseSort = !reverseSort">
+                            Gender <span ng-show="orderByField == 'gender'"><span ng-show="!reverseSort"><b>></b></span><span ng-show="reverseSort"><b><</b></span></span>
+                        </a></td>
+                    <td><a href="#!contacts-list" ng-click="orderByField = 'address'; reverseSort = !reverseSort">
+                            Address <span ng-show="orderByField == 'address'"><span ng-show="!reverseSort"><b>></b></span><span ng-show="reverseSort"><b><</b></span></span>
+                        </a></td>
+                    <td><a href="#!contacts-list" ng-click="orderByField = 'birthday'; reverseSort = !reverseSort">
+                            Birthday <span ng-show="orderByField == 'birthday'"><span ng-show="!reverseSort"><b>></b></span><span ng-show="reverseSort"><b><</b></span></span>
+                        </a></td>
                     <td>Delete contact</td>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="contact in contacts" ng-show="contact.hideContact">
+                <tr ng-repeat="contact in contacts|orderBy:orderByField:reverseSort" ng-show="contact.hideContact">
                     <td>
                         <img ng-if="showImage"
                              ng-src="{{contact.image}}" height='138' width='145'>
