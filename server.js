@@ -20,7 +20,7 @@ app.use('/api/contacts', contacts);
 app.use('/test', test);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);

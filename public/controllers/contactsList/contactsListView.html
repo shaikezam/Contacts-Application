@@ -8,7 +8,8 @@
         <div class="form-group">
             <input type="text" class="form-control" id="usr" placeholder="{{filterPlaceHolder}}" ng-change="searchForContact()" ng-model="filterString" >
         </div>
-        <table class="table table-primary table-hover table-bordered">
+        <div style="overflow-x:auto;">
+        <table class="table table-primary table-hover table-bordered ">
 
             <thead>
                 <tr>
@@ -63,5 +64,6 @@
                 </tr>
             </tbody>
         </table>
+            </div>
     </div>
 </div>
