@@ -6,6 +6,10 @@ let preem = new Preem({
         appPath: "/",
         data: "data/data.json"
     },
+    downloadReport: {
+      format: Preem.CONSTANTS.DOWNLAODFORMAT.JSON,
+      name: "Test123"
+    },
     title: "Preem demonstration",
     onStart: function () {
         console.log("***TESTS STARTED***");
