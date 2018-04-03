@@ -7,8 +7,8 @@ let preem = new Preem({
         data: "data/data.json"
     },
     downloadReport: {
-      format: Preem.CONSTANTS.DOWNLAODFORMAT.JSON,
-      name: "Test123"
+        format: Preem.CONSTANTS.DOWNLAODFORMAT.JSON,
+        name: "Test123"
     },
     title: "Preem demonstration",
     onStart: function () {
@@ -31,7 +31,15 @@ preem.testModule("Test contacts list", function (beforeEach, checkIf, when, then
             //return $('#main-panel')[0];
         }
     }, "Can see the main panel", "Can't see the main panel");
-    
+
+    when().iCanSeeElement({
+        el: {
+            //id: "main-panel",
+            class: "panel-heading"
+        }
+
+    }, "Can see the main panel", "Can't see the main panel");
+
     when().iCanSeeElement({
         el: function (app) {
             return app.$('#welcome-panel')[0];
@@ -60,7 +68,7 @@ preem.testModule("Test contacts pagination", function (beforeEach, checkIf, when
         },
         action: Preem.CONSTANTS.ACTIONS.CLICK
     }, "When: I click the contacts pagination button", "Can't click the contacts pagination button");
-    
+
     then().iCanSeeElement({
         el: function (app) {
             return app.$("ul")[0];
