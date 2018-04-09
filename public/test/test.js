@@ -4,7 +4,7 @@ let preem = new Preem({
     type: Preem.CONSTANTS.TESTTYPE.SYNC,
     networkManager: {
         appPath: "/",
-        data: "data/data.json"
+        data: "data/dataa.json"
     },
     downloadReport: {
         format: Preem.CONSTANTS.DOWNLAODFORMAT.JSON,
@@ -32,13 +32,6 @@ preem.testModule("Test contacts list", function (beforeEach, checkIf, when, then
         }
     }, "Can see the main panel", "Can't see the main panel");
 
-    when().iCanSeeElement({
-        el: {
-            //id: "main-panel",
-            class: "panel-heading"
-        }
-
-    }, "Can see the main panel", "Can't see the main panel");
 
     when().iCanSeeElement({
         el: function (app) {
@@ -52,6 +45,15 @@ preem.testModule("Test contacts list", function (beforeEach, checkIf, when, then
         },
         action: Preem.CONSTANTS.ACTIONS.CLICK
     }, "can see the main panel", "can't see the main panel");
+
+    when().iCanSeeElement({
+        el: {
+            //id: "main-panel",
+            tag: "div",
+            class: "btn btn-primary"
+        }
+
+    }, "Can see the main panel", "Can't see the main panel");
 
     then().iCanSeeElement({
         el: function (app) {
