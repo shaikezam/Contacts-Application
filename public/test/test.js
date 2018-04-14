@@ -4,10 +4,10 @@ let preem = new Preem({
     type: Preem.CONSTANTS.TESTTYPE.SYNC,
     networkManager: {
         appPath: "/",
-        data: "data/dataa.json"
+        data: "data/data.json"
     },
     downloadReport: {
-        format: Preem.CONSTANTS.DOWNLAODFORMAT.JSON,
+        format: Preem.CONSTANTS.DOWNLAODFORMAT.XML,
         name: "Test123"
     },
     title: "Preem demonstration",
@@ -49,7 +49,6 @@ preem.testModule("Test contacts list", function (beforeEach, checkIf, when, then
     when().iCanSeeElement({
         el: {
             //id: "main-panel",
-            tag: "div",
             class: "btn btn-primary"
         }
 
