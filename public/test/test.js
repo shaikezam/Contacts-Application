@@ -19,7 +19,7 @@ let preem = new Preem({
     }
 });
 
-preem.testModule("Test contacts list", function (beforeEach, checkIf, when, then) {
+preem.testModule("Test contacts list", function (beforeEach, when, then) {
 
     beforeEach(function () {
         console.log("Before each checkIf");
@@ -46,14 +46,6 @@ preem.testModule("Test contacts list", function (beforeEach, checkIf, when, then
         action: Preem.CONSTANTS.ACTIONS.CLICK
     }, "can see the main panel", "can't see the main panel");
 
-    when().iCanSeeElement({
-        el: {
-            //id: "main-panel",
-            class: "btn btn-primary"
-        }
-
-    }, "Can see the main panel", "Can't see the main panel");
-
     then().iCanSeeElement({
         el: function (app) {
             return app.$('#usr')[0];
@@ -61,7 +53,7 @@ preem.testModule("Test contacts list", function (beforeEach, checkIf, when, then
     }, 'Can see search contact element', 'Cant see search contact element');
 });
 
-preem.testModule("Test contacts pagination", function (beforeEach, checkIf, when, then) {
+preem.testModule("Test contacts pagination", function (beforeEach, when, then) {
 
     when().iCanSeeElement({
         el: function (app) {
