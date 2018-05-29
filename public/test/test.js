@@ -67,6 +67,20 @@ preem.testModule("Test contacts pagination", function (beforeEach, when, then) {
             return app.$("ul")[0];
         }
     }, "Can see the contacts pagination button", "Can't see the contacts pagination button");
+    
+    then().iCanSeeElement({
+        el: function (app) {
+            return app.document.getElementById('contacts-list');
+        },
+        action: Preem.CONSTANTS.ACTIONS.MOUSEOVER
+    }, "When I blur the contacts list button", "Can't find the contacts list button");
+    
+    then().iCanSeeElement({
+        el: function (app) {
+            return app.document.getElementById('contacts-listt');
+        },
+        action: Preem.CONSTANTS.ACTIONS.BLUR
+    }, "When I blur the contacts list button", "Can't find the contacts list button");
 });
 
 preem.start();
