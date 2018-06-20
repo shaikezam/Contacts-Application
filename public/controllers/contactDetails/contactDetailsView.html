@@ -17,13 +17,13 @@
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-first-name">First Name:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-first-name" class="form-control" ng-model="contact.first_name" ng-readonly="enableForm.contactFirstName" required></div>
+                            <div class="col-md-6"><input type="text" id="contact-first-name" class="form-control" ng-change="updateOutput()" ng-model="contact.first_name" ng-readonly="enableForm.contactFirstName"></div>
                         </div>
                     </div>
                     <div class="row myform">
                         <div class="form-group">
                             <div class="col-md-2"><label for="contact-last-name">Last Name:</label></div>
-                            <div class="col-md-6"><input type="text" id="contact-last-name" class="form-control" ng-model="contact.last_name" ng-readonly="enableForm.contactLastName" required></div>
+                            <div class="col-md-6"><input type="text" id="contact-last-name" class="form-control" ng-model="contact.last_name" ng-readonly="enableForm.contactLastName"></div>
                         </div>
                     </div>
                     <div class="row myform">
@@ -57,7 +57,7 @@
                                            uib-datepicker-popup="{{format}}"
                                            is-open="isOpen"
                                            ui-date
-                                           ng-model="contact.birthday" ng-readonly="enableForm.contactBirthDay" required>
+                                           ng-model="contact.birthday" ng-readonly="enableForm.contactBirthDay">
                                     <span class="input-group-btn">
                                         <button class="btn btn-default"
                                                 ng-click="openCalendar($event)"
@@ -96,12 +96,12 @@
                     style="width:80px;margin-left:10px">
                 Save
             </button>
-            <button type="submit" class="btn btn-primary" ng-if="enableForm.action === 'create'"
+            <button type="submit" class="btn btn-primary" id="create-new-contact" ng-if="enableForm.action === 'create'"
                     ng-click="contactForm.$valid && createContact($event)"
                     style="width:80px;margin-left:10px">
                 Create
             </button>
-            <button type="submit" class="btn btn-primary" ng-if="enableForm.action === 'delete'"
+            <button type="submit" class="btn btn-primary" id="delete-contact" ng-if="enableForm.action === 'delete'"
                     ng-click="contactForm.$valid && deleteContact($event)"
                     style="width:80px;margin-left:10px">
                 Delete

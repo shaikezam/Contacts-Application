@@ -48,7 +48,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="contact in contacts|orderBy:orderByField:reverseSort" ng-show="contact.hideContact">
+                <tr ng-repeat="contact in contacts|orderBy:orderByField:reverseSort" ng-show="contact.hideContact"  class="list-contacts">
                     <td>
                         <img ng-if="showImage"
                              ng-src="{{contact.image}}" height='138' width='145'>

@@ -32,6 +32,12 @@ preem.testModule("Test contacts list", function (beforeEach, when, then) {
         }
     }, "Can see the main panel", "Can't see the main panel");
 
+    when().iCanSeeElement({
+        el: function (app) {
+            return app.document.getElementsByTagName('b')[0].innerHTML === "AngularJS and Node.js";
+            //return $('#main-panel')[0];
+        }
+    }, "AngularJS and Node.js is written in bold style", "Can't see AngularJS and Node.js text");
 
     when().iCanSeeElement({
         el: function (app) {
@@ -40,8 +46,11 @@ preem.testModule("Test contacts list", function (beforeEach, when, then) {
     }, "Can see the welcome panel", "Can't see the welcome panel");
 
     then().iCanSeeElement({
-        el: function (app) {
+        /*el: function (app) {
             return app.$('#contacts-list')[0];
+        },*/
+        el: {
+            id: 'contacts-list'
         },
         action: Preem.CONSTANTS.ACTIONS.CLICK
     }, "can see the main panel", "can't see the main panel");
@@ -67,19 +76,12 @@ preem.testModule("Test contacts pagination", function (beforeEach, when, then) {
             return app.$("ul")[0];
         }
     }, "Can see the contacts pagination button", "Can't see the contacts pagination button");
-    
+
     then().iCanSeeElement({
         el: function (app) {
             return app.document.getElementById('contacts-list');
         },
         action: Preem.CONSTANTS.ACTIONS.MOUSEOVER
-    }, "When I blur the contacts list button", "Can't find the contacts list button");
-    
-    then().iCanSeeElement({
-        el: function (app) {
-            return app.document.getElementById('contacts-listt');
-        },
-        action: Preem.CONSTANTS.ACTIONS.BLUR
     }, "When I blur the contacts list button", "Can't find the contacts list button");
 });
 

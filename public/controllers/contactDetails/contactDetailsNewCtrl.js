@@ -29,6 +29,10 @@ define(['../module'], function (controllers) {
                 $scope.isOpen = !$scope.isOpen;
             };
 
+            $scope.updateOutput = function (aa) {
+                console.log(aa);
+            }
+
             $scope.createContact = function (event) {
                 var birthday = $scope.contact.birthday;
                 $scope.contact.birthday = birthday.getDate().toString() + '.' + (birthday.getMonth() + 1).toString() + '.' + birthday.getFullYear().toString();

@@ -7,4 +7,9 @@ router.get('/test', function(req, res, next) {
     res.sendFile('index.html');
 });
 
+router.get('/test/contacts/new', function(req, res, next) {
+    //res.render('index', { title: 'Express' });
+    res.sendFile('index.html');
+});
+
 module.exports = router;

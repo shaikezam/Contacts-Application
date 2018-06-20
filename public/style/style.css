@@ -27,3 +27,8 @@ body {
 .myform {
     margin-bottom: 5px;
 }
+
+.list-contacts:hover {
+    background-color: #000 !important; 
+    color: #ffffff !important;
+}
